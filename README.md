@@ -1,0 +1,2 @@
+# TemperatureArrays
+JS_practice_with_Arrays
