@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<meta charset = "utf-8">
+	<title>Temperature Highs for the Week</title>
+	<h1>Welcome to Homework 3-2 Temperature in Arrays</h1>
+	<script>
+	// *********************************************
+	// **    Code Author:  Carol_Farris 
+	// **    Date:      10/28/17           
+	// **    Description: this page processes an array with hardcoded Temp values to identify
+	// **	     		  the weeks temp high and reports the days of the week where the 
+	// **				  max temp was hit. 
+	// **    
+	// **********************************************
+	// **       Change Log 
+	// **     10/28/17 – Created Html doc, created arrays to identify values. CF
+	// **********************************************
+
+	////////BEGIN HOMEWORK 3-2 code///////////////////////////////////////////
+
+	//create array to hold Temperature arrays 
+ 	var tempsForWeek = [];
+
+ 	//Add instructor provided values to array 
+ 	tempsForWeek[0] = [56, 59, 63, 66, 67, 69, 70, 69, 65, 62, 59, 56]; // Monday
+	tempsForWeek[1] = [57, 59, 61, 64, 67, 69, 70, 71, 71, 69, 67, 64]; // Tuesday
+	tempsForWeek[2] = [58, 60, 62, 64, 66, 68, 69, 70, 70, 69, 62, 57]; // Wednesday
+	tempsForWeek[3] = [57, 56, 69, 62, 65, 66, 68, 68, 70, 69, 59, 52]; // Thursday
+	tempsForWeek[4] = [52, 59, 59, 63, 67, 70, 72, 73, 77, 74, 70, 65]; // Friday
+	tempsForWeek[5] = [60, 58, 62, 64, 69, 70, 74, 75, 77, 77, 74, 72]; // Saturday
+	tempsForWeek[6] = [63, 63, 64, 68, 71, 74, 75, 76, 77, 75, 74, 73]; // Sunday
+
+
+	 //Create a section of code to find the highest temperature during the week.
+	 //for loop to iterate through each day and find the high temperature
+	 var i = 0; //counter  for for loop to iterate through arrays
+	 var sortedArray = []; //captures sorted values for each iteration of array
+	 var highestDayTemp = 0;
+
+	 //for loop to find the highest temperature, nested if statement captures highest temp
+  	for (i=0; i<tempsForWeek.length; i++){ //iterate through each day
+  		tempsForWeek[i].sort();
+  	    
+  	    if( tempsForWeek[i][11] >=highestDayTemp){
+     	highestDayTemp = tempsForWeek[i][11];
+     	}
+   
+  		}
+
+  	//Create array to hold the days of the week
+  	var daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];	
+
+  	//Print the results on console
+  	console.log("The highest temperature  for this week was: " + highestDayTemp);
+  	console.log ("Days with the highest temperature: ");
+
+  	//identify days that have the highest temp and print them to console
+  	 for (i=0; i<tempsForWeek.length; i++){
+  		if ( tempsForWeek[i].indexOf(highestDayTemp) != -1 ){
+   		console.log(daysOfWeek[i]);
+          }
+  		}
+
+  	</script>
+
+</head>
+</html>
+
+
+
+
+
+
+
